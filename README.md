@@ -16,7 +16,7 @@ Run Selenium Server
 1. Open up Terminal with a new tab 
 2. Navigate to the vmc_automation_tests folder
 3. Run "java -jar selenium-server-standalone-3.141.59.jar"
-4. 
+
 You should be able to see the line "Selenium Server is up and running on port 4444" if the selenium server is running properly.
 
 
