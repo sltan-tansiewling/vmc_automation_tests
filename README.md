@@ -5,21 +5,26 @@ Pre-Requisite Installation:
 - Java JDK (https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)
 - Firefox (for now as this version depends on Firefox)
 
+
 Local Setup
 1. Open up Terminal
 2. Clone the repo to your working directory
 3. Run "composer install" to install all the packages
  
+ 
 Run Selenium Server
 1. Open up Terminal with a new tab 
 2. Navigate to the vmc_automation_tests folder
 3. Run "java -jar selenium-server-standalone-3.141.59.jar"
+4. 
 You should be able to see the line "Selenium Server is up and running on port 4444" if the selenium server is running properly.
+
 
 Run Behat Test (Can continue from the 1st Terminal tab on Local Setup)
 1. To run all feature tests, run "vendor/bin/behat"
 2. To run a specific feature file (e.g. feature file name is sign_in), run "vendor/bin/behat features/sign_in.feature"
 3. To run scenarios with only certain tags (e.g. the tag to run is @regression), run "vendor/bin/behat --tags @regression"
+
 
 Upcoming
 - Add support for other browsers e.g. Chrome
