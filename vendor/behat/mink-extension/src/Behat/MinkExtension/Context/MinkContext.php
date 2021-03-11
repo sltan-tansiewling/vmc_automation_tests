@@ -570,4 +570,25 @@ class MinkContext extends RawMinkContext implements TranslatableContext
     {
         return str_replace('\\"', '"', $argument);
     }
+
+    /**
+     * @Given I maximise window size
+     */
+    public function iMaximiseWindowSize()
+    {
+        $this->getSession()->getDriver()->maximizeWindow();
+    }
+
+    /**
+     * @When /^I fill "([^"]*)" with "([^"]*)"$/
+     */
+    public function fillWith($selector, $text)
+    {
+        $element = $this->getSession()->getPage()->find('css', $selector);
+        if($element === null){
+            throw new Exception("Element $selector not found");
+        }else{
+            $element->setValue($text);
+        }
+    }
 }

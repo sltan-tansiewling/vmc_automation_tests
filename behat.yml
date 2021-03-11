@@ -3,10 +3,12 @@ default:
     default:
       features: features
       bootstrap: 'features/bootstrap'
-      contexts: [Behat\MinkExtension\Context\MinkContext]
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
   extensions:
     Behat\MinkExtension:
       goutte: ~
       selenium2: ~
       browser_name: firefox
       default_session: selenium2
+      base_url: 'https:/dev.vuulr.info'
