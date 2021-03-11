@@ -1,4 +1,4 @@
-Feature: Sign In
+Feature: Login
     In order to purchase movie content
     As a buyer
     I need to be able to login to the marketplace
