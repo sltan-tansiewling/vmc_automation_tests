@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bcef1ae97fcf1a283f0fe35f5441ec1f",
+    "content-hash": "569cd20395eeac008ba5e5823b1b5663",
     "packages": [],
     "packages-dev": [
         {
@@ -1184,16 +1184,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d6d0cc30d8c0fda4e7b213c20509b0159a8f4556"
+                "reference": "938ebbadae1b0a9c9d1ec313f87f9708609f1b79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d6d0cc30d8c0fda4e7b213c20509b0159a8f4556",
-                "reference": "d6d0cc30d8c0fda4e7b213c20509b0159a8f4556",
+                "url": "https://api.github.com/repos/symfony/console/zipball/938ebbadae1b0a9c9d1ec313f87f9708609f1b79",
+                "reference": "938ebbadae1b0a9c9d1ec313f87f9708609f1b79",
                 "shasum": ""
             },
             "require": {
@@ -1261,7 +1261,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.2.4"
+                "source": "https://github.com/symfony/console/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -1277,7 +1277,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-23T10:08:49+00:00"
+            "time": "2021-03-06T13:42:15+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -2774,16 +2774,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "7d6ae0cce3c33965af681a4355f1c4de326ed277"
+                "reference": "298a08ddda623485208506fcee08817807a251dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7d6ae0cce3c33965af681a4355f1c4de326ed277",
-                "reference": "7d6ae0cce3c33965af681a4355f1c4de326ed277",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/298a08ddda623485208506fcee08817807a251dd",
+                "reference": "298a08ddda623485208506fcee08817807a251dd",
                 "shasum": ""
             },
             "require": {
@@ -2829,7 +2829,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.2.4"
+                "source": "https://github.com/symfony/yaml/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -2845,7 +2845,55 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-22T15:48:39+00:00"
+            "time": "2021-03-06T07:59:01+00:00"
+        },
+        {
+            "name": "uuf6429/behat-breakpoint",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uuf6429/behat-breakpoint.git",
+                "reference": "65b367fb8b925d249080416d79ea51144780df15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uuf6429/behat-breakpoint/zipball/65b367fb8b925d249080416d79ea51144780df15",
+                "reference": "65b367fb8b925d249080416d79ea51144780df15",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.0",
+                "ext-json": "*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "behat/mink-extension": "^2",
+                "behat/mink-selenium2-driver": "^1.3",
+                "crodas/phpunit-compat": "^1",
+                "dg/bypass-finals": "^1.1",
+                "phpdocumentor/reflection-docblock": "^3 || ^4",
+                "phpunit/phpunit": "^5 || ^6 || ^7",
+                "symfony/process": "^3.4"
+            },
+            "suggest": {
+                "ext-xdebug": "Required for Xdebug breakpoints."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "uuf6429\\BehatBreakpoint\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "✋ Provides various ways to break/block scenarios.",
+            "support": {
+                "issues": "https://github.com/uuf6429/behat-breakpoint/issues",
+                "source": "https://github.com/uuf6429/behat-breakpoint/tree/master"
+            },
+            "time": "2018-10-28T01:03:33+00:00"
         }
     ],
     "aliases": [],

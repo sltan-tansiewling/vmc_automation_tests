@@ -4,7 +4,9 @@ default:
       features: features
       bootstrap: 'features/bootstrap'
       contexts:
+        - FeatureContext
         - Behat\MinkExtension\Context\MinkContext
+        - uuf6429\BehatBreakpoint\Context
   extensions:
     Behat\MinkExtension:
       goutte: ~

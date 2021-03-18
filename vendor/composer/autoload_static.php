@@ -24,6 +24,10 @@ class ComposerStaticInita3fd5515343559cd8e0cebd1b60593dd
     );
 
     public static $prefixLengthsPsr4 = array (
+        'u' => 
+        array (
+            'uuf6429\\BehatBreakpoint\\' => 24,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -73,6 +77,10 @@ class ComposerStaticInita3fd5515343559cd8e0cebd1b60593dd
     );
 
     public static $prefixDirsPsr4 = array (
+        'uuf6429\\BehatBreakpoint\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/uuf6429/behat-breakpoint/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
