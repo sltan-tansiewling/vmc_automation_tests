@@ -28,6 +28,14 @@ class ComposerStaticInita3fd5515343559cd8e0cebd1b60593dd
         array (
             'uuf6429\\BehatBreakpoint\\' => 24,
         ),
+        'e' => 
+        array (
+            'emuse\\BehatHTMLFormatter\\' => 25,
+        ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -80,6 +88,14 @@ class ComposerStaticInita3fd5515343559cd8e0cebd1b60593dd
         'uuf6429\\BehatBreakpoint\\' => 
         array (
             0 => __DIR__ . '/..' . '/uuf6429/behat-breakpoint/src',
+        ),
+        'emuse\\BehatHTMLFormatter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/emuse/behat-html-formatter/src',
+        ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -227,6 +243,13 @@ class ComposerStaticInita3fd5515343559cd8e0cebd1b60593dd
             'WebDriver' => 
             array (
                 0 => __DIR__ . '/..' . '/instaclick/php-webdriver/lib',
+            ),
+        ),
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
         'B' => 

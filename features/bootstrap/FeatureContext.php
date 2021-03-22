@@ -6,6 +6,11 @@ use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Mink\Element\TraversableElement;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
+use Behat\Behat\Hook\Scope\AfterStepScope;
+use Behat\Mink\Session;
+use Behat\Mink\Selector\SelectorsHandler;
+use Behat\Mink\Element\ElementInterface;
 
 /**
  * Defines application features from the specific context.
@@ -86,4 +91,125 @@ class FeatureContext extends RawMinkContext implements Context
             }
         }
     }
+
+    /**
+     * @BeforeScenario
+     *
+     * @param BeforeScenarioScope $scope
+     *
+     */
+    public function setUpTestEnvironment($scope)
+    {
+        $this->currentScenario = $scope->getScenario();
+    }
+
+    /**
+     * @AfterStep
+     *
+     * @param AfterStepScope $scope
+     */
+    public function afterStep($scope)
+    {
+        //if test has failed, and is not an api test, get screenshot
+        if(!$scope->getTestResult()->isPassed())
+        {
+            //create filename string
+
+            $featureFolder = preg_replace('/\W/', '', $scope->getFeature()->getTitle());
+                
+                            $scenarioName = $this->currentScenario->getTitle();
+                            $fileName = preg_replace('/\W/', '', $scenarioName) . '.png';
+
+            //create screenshots directory if it doesn't exist
+            // if (!file_exists('results/html/assets/screenshots/' . $featureFolder)) {
+            //     mkdir('results/html/assets/screenshots/' . $featureFolder);
+            // }
+
+            //take screenshot and save as the previously defined filename
+            $this->driver->takeScreenshot('results/html/assets/screenshots/' . $featureFolder . '/' . $fileName);
+            // For Selenium2 Driver you can use:
+            // file_put_contents('results/html/assets/screenshots/' . $featureFolder . '/' . $fileName, $this->getSession()->getDriver()->getScreenshot());
+        }
+    }
+
+    /**
+     * @When I select Exclusive rights for Free to Air format
+     */
+    public function iSelectRightsForFormat()
+    {
+        $element = $this->getSession()->getPage()->find(
+            'xpath', '//table[contains(@class, "offer-rights-table")]/tbody/tr[1]/td[2]');
+
+        if (!$element) {
+            throw new \Exception('No input found');
+        }
+        else {
+            echo "Found";
+        }
+        $element->click();
+    }
+
+    /**
+     * @When I scroll :selector into view
+     *
+     * @param string $selector Allowed selectors: #id, .className, //xpath
+     *
+     * @throws \Exception
+     */
+    public function scrollIntoView($selector)
+    {
+        $locator = substr($selector, 0, 1);
+
+        switch ($locator) {
+            case '/' : // XPath selector
+                $function = <<<JS
+                    (function(){
+                    var elem = document.evaluate($selector, document, null, XPathResult.UNORDERED_NODE_ITERATOR_TYPE, null).singleNodeValue;
+                    elem.scrollIntoView(false);
+                    })()
+                    JS;
+                break;
+
+            case '#' : // ID selector
+                $selector = substr($selector, 1);
+                $function = <<<JS
+                    (function(){
+                    var elem = document.getElementById("$selector");
+                    elem.scrollIntoView(false);
+                    })()
+                    JS;
+                break;
+
+            case '.' : // Class selector
+                $selector = substr($selector, 1);
+                $function = <<<JS
+                    (function(){
+                    var elem = document.getElementsByClassName("$selector");
+                    elem[0].scrollIntoView(false);
+                    })()
+                    JS;
+                break;
+
+            default:
+                throw new \Exception(__METHOD__ . ' Couldn\'t find selector: ' . $selector . ' - Allowed selectors: #id, .className, //xpath');
+                break;
+        }
+
+        try {
+            $this->getSession()->executeScript($function);
+        } catch (Exception $e) {
+            throw new \Exception(__METHOD__ . ' failed');
+        }
+    }
+
+    /**
+     * @Then I click on :selector button
+     */
+    public function iClickOnButton2($selector)
+    {
+        $page = $this->getSession()->getPage();
+        $element = $page->find('css', $selector);
+        $element->click();
+    }
+
 }

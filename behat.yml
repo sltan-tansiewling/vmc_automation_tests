@@ -7,10 +7,23 @@ default:
         - FeatureContext
         - Behat\MinkExtension\Context\MinkContext
         - uuf6429\BehatBreakpoint\Context
+        - emuse\BehatHTMLFormatter\Context\ScreenshotContext:
+               screenshotDir: build/html/behat/assets/screenshots
+      formatters:
+        html:
+          output_path: ~/Documents/vmc_automation_tests/report
+        pretty: ~
   extensions:
     Behat\MinkExtension:
       goutte: ~
       selenium2: ~
       browser_name: firefox
       default_session: selenium2
-      base_url: 'https:/dev.vuulr.info'
+      base_url: 'http://localhost:8095'
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true

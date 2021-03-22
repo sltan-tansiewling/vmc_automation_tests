@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '4aef25d878c02b8431740e52946755c31ed49c16',
+    'reference' => 'd125190d42a73c94b4381b0083362958bcd2da28',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '4aef25d878c02b8431740e52946755c31ed49c16',
+      'reference' => 'd125190d42a73c94b4381b0083362958bcd2da28',
     ),
     'behat/behat' => 
     array (
@@ -91,6 +91,15 @@
       array (
       ),
       'reference' => '3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc',
+    ),
+    'emuse/behat-html-formatter' => 
+    array (
+      'pretty_version' => 'v0.2.0',
+      'version' => '0.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '89340a6f9908e727374528d208c728e060f92315',
     ),
     'fabpot/goutte' => 
     array (
@@ -428,6 +437,15 @@
       array (
       ),
       'reference' => '298a08ddda623485208506fcee08817807a251dd',
+    ),
+    'twig/twig' => 
+    array (
+      'pretty_version' => 'v2.14.4',
+      'version' => '2.14.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0b4ba691fb99ec7952d25deb36c0a83061b93bbf',
     ),
     'uuf6429/behat-breakpoint' => 
     array (
