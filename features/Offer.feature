@@ -6,8 +6,7 @@ Scenario: Buyer can make an offer
     
     When I follow "Sign in"
     Then I should see "Sign In"
-    And I fill "input.userLoginEmail" with "sldevbuyer@sltest.com"
-    And I fill "input[type=password]" with "Pass#word1"
+    And I login as a "buyer" with "correct" credentials
     And I press "Sign In"
     And I wait 5 seconds   
 
@@ -44,11 +43,11 @@ Scenario: Buyer can make an offer
 
     # And I follow "Add Legal Entity"
     # And I scroll "#add_legal_entity_lnk" into view
-    # And I fill "input[name=legalEntityName]" with "Test Entity Name 220325_4"
+    # And I fill "input[name=legalEntityName]" with "Automation Testing v1"
     # And I fill "textarea[name=mailingAddress]" with "Test Mailing Address"
     # And I fill "input[name=website]" with "www.test-website.com"
     # And I fill "input[name=contactEmail]" with "test_email@email.com"
-    # And I fill "input#telephone-input" with "+6590210322"
+    # And I fill "input#telephone-input" with "+6590210326"
     # And I click on "a#add_legal_entity_lnk" button
 
     And I scroll "#gtm-buyer-make_offer-step3-continue-btn" into view
@@ -68,18 +67,19 @@ Scenario: Seller can accept an offer
 
     When I follow "Sign in"
     Then I should see "Sign In"
-    And I fill "input.userLoginEmail" with "seller@curious-films.info"
-    And I fill "input[type=password]" with "HFttunBCB6x8]=i"
+    And I login as a "seller" with "correct" credentials
+    # And I fill "input.userLoginEmail" with "seller@curious-films.info"
+    # And I fill "input[type=password]" with "HFttunBCB6x8]=i"
     And I press "Sign In"
     And I wait 5 seconds 
     
     When I follow "Negotiations"
-    And I go to "/offers/157"
+    And I go to "/offers/155"
     And I click on "button.verify-mobile-number-accept-offer" button
 
     And I follow "Add Legal Entity"
     And I scroll "#add_legal_entity_lnk" into view
-    And I fill "input[name=legalEntityName]" with "Test Entity Name 210326_4"
+    And I fill "input[name=legalEntityName]" with "LE for Offer Acceptance"
     And I fill "textarea[name=mailingAddress]" with "Test Mailing Address"
     And I fill "input[name=website]" with "www.test-website.com"
     And I fill "input[name=contactEmail]" with "test_email@email.com"
@@ -88,3 +88,22 @@ Scenario: Seller can accept an offer
     And I click on "button#accept_offer_btn" button
     And I wait 5 seconds
     Then I should see "The Offer has been accepted. Please proceed to Deal Memo to complete the transaction."
+
+Scenario: Seller can reject an offer
+    Given I am on the homepage
+    And I maximise window size
+
+    When I follow "Sign in"
+    Then I should see "Sign In"
+    And I fill "input.userLoginEmail" with "seller@curious-films.info"
+    And I fill "input[type=password]" with "HFttunBCB6x8]=i"
+    And I press "Sign In"
+    And I wait 5 seconds 
+    
+    When I follow "Negotiations"
+    And I go to "/offers/160"
+    And I click on "a[data-target='#rejectionReasonModal']" button
+    And I fill "textarea#rejectionReason" with "Automation Testing for Reject Offer"
+    And I click on "button.submitRejectionReason" button
+    And I wait 5 seconds
+    Then I should see "Offer Rejected"

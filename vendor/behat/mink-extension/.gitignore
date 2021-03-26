@@ -2,4 +2,3 @@
 *.phar
 composer.lock
 vendor
-build/html/behat/assets/screenshots

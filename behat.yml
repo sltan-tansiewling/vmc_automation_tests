@@ -5,6 +5,7 @@ default:
       bootstrap: 'features/bootstrap'
       contexts:
         - FeatureContext
+        - LoginContext
         - Behat\MinkExtension\Context\MinkContext
         - uuf6429\BehatBreakpoint\Context
         - emuse\BehatHTMLFormatter\Context\ScreenshotContext:

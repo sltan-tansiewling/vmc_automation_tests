@@ -9,12 +9,11 @@ Scenario: Logging in to the marketplace as a buyer
     When I follow "Sign in"
     Then I should see "Sign In"
 
-    When I fill "input.userLoginEmail" with "sldevbuyer@sltest.com"
-    And I fill "input[type=password]" with "1234"
+    When I login as a "buyer" with "wrong" credentials
     And I press "Sign In"
-    Then I should see a "span.help-block.email-error.error" element
+    Then I should see "These credentials do not match our records."
 
-    When I fill "input[type=password]" with "Pass#word1"
+    When I login as a "buyer" with "correct" credentials
     And I press "Sign In"
     And I wait 5 seconds
     Then I should see "Buyer"
