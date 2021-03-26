@@ -16,6 +16,7 @@ Scenario: Logging in to the marketplace as a buyer
 
     When I fill "input[type=password]" with "Pass#word1"
     And I press "Sign In"
+    And I wait 5 seconds
     Then I should see "Buyer"
     And I should see "DISCOVERY"
 

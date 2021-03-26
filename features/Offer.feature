@@ -1,15 +1,12 @@
 Feature: Offer
-    In order to purchase movie content
-    As a buyer
-    I need to be able to make an offer
 
-@javascript
-Scenario: Make Offer
+Scenario: Buyer can make an offer
     Given I am on the homepage
     And I maximise window size
     
     When I follow "Sign in"
-    And I fill "input.userLoginEmail" with "siewling.tan@vuulr.com"
+    Then I should see "Sign In"
+    And I fill "input.userLoginEmail" with "sldevbuyer@sltest.com"
     And I fill "input[type=password]" with "Pass#word1"
     And I press "Sign In"
     And I wait 5 seconds   
@@ -17,6 +14,7 @@ Scenario: Make Offer
     When I go to "/listing/174-gaturro?collection=1"
     And I press "continue"
     And I follow "Make Offer/Proposal"
+    And I wait 5 seconds
     And I press "Make an Offer"
 
     And I fill in select2 input "input.select2-search__field" with "South East Asia" and select "South East Asia"
@@ -42,19 +40,51 @@ Scenario: Make Offer
     And I wait 5 seconds
     And I scroll "#gtm-buyer-make_offer-step3-continue-btn" into view
     And I wait 5 seconds
+    And I click on "input[name=legalEntity][value=9]" button
+
+    # And I follow "Add Legal Entity"
+    # And I scroll "#add_legal_entity_lnk" into view
+    # And I fill "input[name=legalEntityName]" with "Test Entity Name 220325_4"
+    # And I fill "textarea[name=mailingAddress]" with "Test Mailing Address"
+    # And I fill "input[name=website]" with "www.test-website.com"
+    # And I fill "input[name=contactEmail]" with "test_email@email.com"
+    # And I fill "input#telephone-input" with "+6590210322"
+    # And I click on "a#add_legal_entity_lnk" button
+
+    And I scroll "#gtm-buyer-make_offer-step3-continue-btn" into view
+    And I wait 5 seconds
+    And I click on "a.continue-step-3" button
+
+    And I wait 5 seconds
+    And I scroll "#gtm-buyer-make_offer-step4-make_offer-btn" into view
+    And I wait 5 seconds
+    And I follow "Make Offer"
+    And I wait 5 seconds
+    Then I should see "You are waiting for the reply from other party" 
+    
+Scenario: Seller can accept an offer
+    Given I am on the homepage
+    And I maximise window size
+
+    When I follow "Sign in"
+    Then I should see "Sign In"
+    And I fill "input.userLoginEmail" with "seller@curious-films.info"
+    And I fill "input[type=password]" with "HFttunBCB6x8]=i"
+    And I press "Sign In"
+    And I wait 5 seconds 
+    
+    When I follow "Negotiations"
+    And I go to "/offers/157"
+    And I click on "button.verify-mobile-number-accept-offer" button
+
     And I follow "Add Legal Entity"
     And I scroll "#add_legal_entity_lnk" into view
-    And I fill "input[name=legalEntityName]" with "Test Entity Name 220321-5"
+    And I fill "input[name=legalEntityName]" with "Test Entity Name 210326_4"
     And I fill "textarea[name=mailingAddress]" with "Test Mailing Address"
     And I fill "input[name=website]" with "www.test-website.com"
     And I fill "input[name=contactEmail]" with "test_email@email.com"
     And I fill "input#telephone-input" with "+6590210322"
     And I click on "a#add_legal_entity_lnk" button
-    And I scroll "#gtm-buyer-make_offer-step3-continue-btn" into view
+    And I click on "button#accept_offer_btn" button
     And I wait 5 seconds
-    And I click on "a.continue-step-3" button
-    
-    And I wait 5 seconds
-    And I scroll "#gtm-buyer-make_offer-step4-make_offer-btn" into view
-    And I follow "Make Offer"
-
+    Then I should see "The Offer has been accepted. Please proceed to Deal Memo to complete the transaction."

@@ -212,4 +212,27 @@ class FeatureContext extends RawMinkContext implements Context
         $element->click();
     }
 
+    // To find out how to select the offer
+    /**
+     * @When I select the offer
+     */
+    public function iSelectTheOffer()
+    {
+        $table = $this->getSession()->getPage()->find('css', 'table#hits');
+        $div = $table->find('css', 'div#hits_result_show_wrapper');
+        $row = $div->findAll('css', 'tr.offer-sent');
+        
+        foreach($row as $offer) {
+            $offer->find('css', 'td.pt-3.pb-3');
+        }
+
+        if (!$row) {
+            throw new \Exception('No input found');
+        }
+        else {
+            echo "Found";
+        }
+        // $element->click();
+    }
+
 }

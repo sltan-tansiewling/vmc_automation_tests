@@ -331,6 +331,137 @@
         <div class="feature">
             <h2>
                 <span id="feat1" class="keyword"> Feature: </span>
+                <span class="title">Login</span>
+            </h2>
+            <p>  In order to purchase movie content
+  As a buyer
+  I need to be able to login to the marketplace</p>
+            <ul class="tags">
+            </ul>
+            <div class="scenario">
+                <ul class="tags">
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Logging in to the marketplace as a buyer</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I am on the homepage </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::iAmOnHomepage()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I maximise window size </span>
+                            <span class="path">FeatureContext::iMaximiseWindowSize()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I follow &quot;Sign in&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::clickLink()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should see &quot;Sign In&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::assertPageContainsText()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fill &quot;input.userLoginEmail&quot; with &quot;sldevbuyer@sltest.com&quot; </span>
+                            <span class="path">FeatureContext::fillWith()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I fill &quot;input[type=password]&quot; with &quot;1234&quot; </span>
+                            <span class="path">FeatureContext::fillWith()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I press &quot;Sign In&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::pressButton()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should see a &quot;span.help-block.email-error.error&quot; element </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::assertElementOnPage()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I fill &quot;input[type=password]&quot; with &quot;Pass#word1&quot; </span>
+                            <span class="path">FeatureContext::fillWith()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I press &quot;Sign In&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::pressButton()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I should see &quot;Buyer&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::assertPageContainsText()</span>
+                        </div>
+                        <pre class="backtrace">The text "Buyer" was not found anywhere in the text of the current page.</pre>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I should see &quot;DISCOVERY&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::assertPageContainsText()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I follow &quot;Buyer&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::clickLink()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I follow &quot;Log out&quot; </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::clickLink()</span>
+                        </div>
+                    </li>
+                    <li class="skipped">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">I am on the homepage </span>
+                            <span class="path">Behat\MinkExtension\Context\MinkContext::iAmOnHomepage()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 0%,
+                Scenarios failed : 100%</span>
+            </div>
+        </div>
+        <div class="feature">
+            <h2>
+                <span id="feat2" class="keyword"> Feature: </span>
                 <span class="title">Offer</span>
             </h2>
             <p>  In order to purchase movie content
@@ -440,9 +571,16 @@
                     </li>
                     <li class="passed">
                         <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot; </span>
-                            <span class="path">uuf6429\BehatBreakpoint\Context::aConsoleBreakpointIsTriggered()</span>
+                            <span class="keyword">And </span>
+                            <span class="text">I scroll &quot;.rights-table&quot; into view </span>
+                            <span class="path">FeatureContext::scrollIntoView()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -450,6 +588,13 @@
                             <span class="keyword">And </span>
                             <span class="text">I select Exclusive rights for Free to Air format </span>
                             <span class="path">FeatureContext::iSelectRightsForFormat()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -490,8 +635,22 @@
                     <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
                             <span class="text">I scroll &quot;#gtm-buyer-make_offer-step2-continue-btn&quot; into view </span>
                             <span class="path">FeatureContext::scrollIntoView()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -503,9 +662,23 @@
                     </li>
                     <li class="passed">
                         <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot; </span>
-                            <span class="path">uuf6429\BehatBreakpoint\Context::aConsoleBreakpointIsTriggered()</span>
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I click on &quot;a.continue-step-2&quot; button </span>
+                            <span class="path">FeatureContext::iClickOnButton2()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -515,93 +688,114 @@
                             <span class="path">FeatureContext::scrollIntoView()</span>
                         </div>
                     </li>
-                    <li class="failed">
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I follow &quot;Add Legal Entity&quot; </span>
                             <span class="path">Behat\MinkExtension\Context\MinkContext::clickLink()</span>
                         </div>
-                        <pre class="backtrace">TypeError: rect is undefined
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'Tans-MacBook-Pro.local', ip: 'fe80:0:0:0:10de:456e:ae9a:813b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
-Driver info: driver.version: unknown</pre>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I scroll &quot;#add_legal_entity_lnk&quot; into view </span>
                             <span class="path">FeatureContext::scrollIntoView()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
-                            <span class="text">I fill &quot;input[name=legalEntityName]&quot; with &quot;Test Entity Name 220321-1&quot; </span>
+                            <span class="text">I fill &quot;input[name=legalEntityName]&quot; with &quot;Test Entity Name 220321-5&quot; </span>
                             <span class="path">FeatureContext::fillWith()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I fill &quot;textarea[name=mailingAddress]&quot; with &quot;Test Mailing Address&quot; </span>
                             <span class="path">FeatureContext::fillWith()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I fill &quot;input[name=website]&quot; with &quot;www.test-website.com&quot; </span>
                             <span class="path">FeatureContext::fillWith()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I fill &quot;input[name=contactEmail]&quot; with &quot;test_email@email.com&quot; </span>
                             <span class="path">FeatureContext::fillWith()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I fill &quot;input#telephone-input&quot; with &quot;+6590210322&quot; </span>
                             <span class="path">FeatureContext::fillWith()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot; </span>
-                            <span class="path">uuf6429\BehatBreakpoint\Context::aConsoleBreakpointIsTriggered()</span>
+                            <span class="keyword">And </span>
+                            <span class="text">I click on &quot;a#add_legal_entity_lnk&quot; button </span>
+                            <span class="path">FeatureContext::iClickOnButton2()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I scroll &quot;#gtm-buyer-make_offer-step3-continue-btn&quot; into view </span>
                             <span class="path">FeatureContext::scrollIntoView()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
                         <div class="step">
-                            <span class="keyword">Then </span>
-                            <span class="text">a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot; </span>
-                            <span class="path">uuf6429\BehatBreakpoint\Context::aConsoleBreakpointIsTriggered()</span>
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I click on &quot;a.continue-step-3&quot; button </span>
+                            <span class="path">FeatureContext::iClickOnButton2()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">I wait 5 seconds </span>
+                            <span class="path">FeatureContext::wait()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I scroll &quot;#gtm-buyer-make_offer-step4-make_offer-btn&quot; into view </span>
                             <span class="path">FeatureContext::scrollIntoView()</span>
                         </div>
                     </li>
-                    <li class="skipped">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I follow &quot;Make Offer&quot; </span>
                             <span class="path">Behat\MinkExtension\Context\MinkContext::clickLink()</span>
                         </div>
+                        <pre class="backtrace">TypeError: rect is undefined
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'Tans-MacBook-Pro.local', ip: 'fe80:0:0:0:10de:456e:ae9a:813b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.2'
+Driver info: driver.version: unknown</pre>
                     </li>
                 </ol>
             </div>
@@ -649,7 +843,7 @@ Driver info: driver.version: unknown</pre>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 22/03/2021 03:54:13</a>
+            <a class="navbar-brand" href="#">Automated test report - 22/03/2021 09:13:08</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -666,19 +860,19 @@ Driver info: driver.version: unknown</pre>
                 <canvas id="chart-features" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                1 Features:
+                2 Features:
             </div>
-            <div class="chart-summary failed">1 failed</div>
+            <div class="chart-summary failed">2 failed</div>
         </div>
         <div class="col-sm-4">
             <div class="canvas-holder">
                 <canvas id="chart-scenarios" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                1
+                2
                 Scenarios:
             </div>
-            <div class="chart-summary failed">1 failed</div>
+            <div class="chart-summary failed">2 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -687,10 +881,10 @@ Driver info: driver.version: unknown</pre>
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
             <div class="chart-summary title">
-                25
+                56
                 Steps:
             </div>
-            <div class="chart-summary failed">1 failed</div>
+            <div class="chart-summary failed">2 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -709,6 +903,36 @@ Driver info: driver.version: unknown</pre>
 
                     <div class="row">
                                                     <div class="col-sm-4 feature" data-id="feature-1">
+                                <div class="card failed">
+                                    <div class="header">
+                                        <h2>Feature: Login</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>  In order to purchase movie content<br />
+  As a buyer<br />
+  I need to be able to login to the marketplace</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                                    <div class="progress">
+                                                <div class="progress-bar progress-bar-green" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                     style="width: 0%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                                <div class="progress-bar progress-bar-red" role="progressbar"
+                                                     style="width: 100%">
+                                                    <span class="sr-only">40% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-2">
                                 <div class="card failed">
                                     <div class="header">
                                         <h2>Feature: Offer</h2>
@@ -748,6 +972,108 @@ Driver info: driver.version: unknown</pre>
                     <div class="col-sm-4">
                         <div class="card failed">
                             <div class="header">
+                                <h2>Feature: Login</h2>
+                            </div>
+                            <div class="info">
+                                <p>  In order to purchase movie content<br />
+  As a buyer<br />
+  I need to be able to login to the marketplace</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-green" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                             style="width: 0%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-red" role="progressbar"
+                                             style="width: 100%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default failed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-1-1"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-1-1">
+                                            Scenario: Logging in to the marketplace as a buyer
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                                                                </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-1-1" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I am on the homepage
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I maximise window size
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>When</b> I follow &quot;Sign in&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>Then</b> I should see &quot;Sign In&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>When</b> I fill &quot;input.userLoginEmail&quot; with &quot;sldevbuyer@sltest.com&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I fill &quot;input[type=password]&quot; with &quot;1234&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I press &quot;Sign In&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>Then</b> I should see a &quot;span.help-block.email-error.error&quot; element
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>When</b> I fill &quot;input[type=password]&quot; with &quot;Pass#word1&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I press &quot;Sign In&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>Then</b> I should see &quot;Buyer&quot;
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(The text &quot;Buyer&quot; was not found anywhere in the text of the current page.)</p>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> I should see &quot;DISCOVERY&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>When</b> I follow &quot;Buyer&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>And</b> I follow &quot;Log out&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
+                                                <b>Then</b> I am on the homepage
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+                            <div class="feature" data-id="feature-2">
+                    <div class="col-sm-4">
+                        <div class="card failed">
+                            <div class="header">
                                 <h2>Feature: Offer</h2>
                             </div>
                             <div class="info">
@@ -780,9 +1106,9 @@ Driver info: driver.version: unknown</pre>
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-1-1"
+                                           href="#scenario-2-1"
                                            aria-expanded="true"
-                                           aria-controls="scenario-1-1">
+                                           aria-controls="scenario-2-1">
                                             Scenario: Make Offer
                                         </a>
 
@@ -791,7 +1117,7 @@ Driver info: driver.version: unknown</pre>
                                                                                                                                 </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-1-1" class="panel-collapse collapse in"
+                                <div id="scenario-2-1" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -835,13 +1161,19 @@ Driver info: driver.version: unknown</pre>
                                                 <b>And</b> I fill &quot;input.w-100.years&quot; with &quot;2&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
-                                                <b>Then</b> a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot;
+                                                <b>And</b> I scroll &quot;.rights-table&quot; into view
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I select Exclusive rights for Free to Air format
                                                                                                                                                                                                                                                                                                         <br>
                                                     <p style="padding-left:2em ; color:black">| Found</p>
                                                                                                                                             </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
+                                                                                                                                                                                                                                                                                                                                                </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I fill &quot;input#amount&quot; with &quot;100000&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
@@ -858,58 +1190,79 @@ Driver info: driver.version: unknown</pre>
                                                 <b>And</b> I follow &quot;Add&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>And</b> I scroll &quot;#gtm-buyer-make_offer-step2-continue-btn&quot; into view
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I select &quot;Specific Date&quot; from &quot;mediaDeliveryOptions&quot;
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
-                                                <b>Then</b> a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot;
+                                                <b>And</b> I wait 5 seconds
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I click on &quot;a.continue-step-2&quot; button
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
                                                                                                                                                                                                                                                                                                                                                 </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I scroll &quot;#gtm-buyer-make_offer-step3-continue-btn&quot; into view
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
                                                 <b>And</b> I follow &quot;Add Legal Entity&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I scroll &quot;#add_legal_entity_lnk&quot; into view
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I fill &quot;input[name=legalEntityName]&quot; with &quot;Test Entity Name 220321-5&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I fill &quot;textarea[name=mailingAddress]&quot; with &quot;Test Mailing Address&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I fill &quot;input[name=website]&quot; with &quot;www.test-website.com&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I fill &quot;input[name=contactEmail]&quot; with &quot;test_email@email.com&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I fill &quot;input#telephone-input&quot; with &quot;+6590210322&quot;
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I click on &quot;a#add_legal_entity_lnk&quot; button
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I scroll &quot;#gtm-buyer-make_offer-step3-continue-btn&quot; into view
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I click on &quot;a.continue-step-3&quot; button
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I wait 5 seconds
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I scroll &quot;#gtm-buyer-make_offer-step4-make_offer-btn&quot; into view
+                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
+                                                <b>And</b> I follow &quot;Make Offer&quot;
                                                                                                                                                                                                                                                         <br>
                                                     <p style="padding-left:2em ; color:gray">(TypeError: rect is undefined
 Build info: version: &#039;3.141.59&#039;, revision: &#039;e82be7d358&#039;, time: &#039;2018-11-14T08:25:53&#039;
 System info: host: &#039;Tans-MacBook-Pro.local&#039;, ip: &#039;fe80:0:0:0:10de:456e:ae9a:813b%en0&#039;, os.name: &#039;Mac OS X&#039;, os.arch: &#039;x86_64&#039;, os.version: &#039;10.15.7&#039;, java.version: &#039;15.0.2&#039;
 Driver info: driver.version: unknown)</p>
                                                                                                                                                                                             </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I scroll &quot;#add_legal_entity_lnk&quot; into view
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I fill &quot;input[name=legalEntityName]&quot; with &quot;Test Entity Name 220321-1&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I fill &quot;textarea[name=mailingAddress]&quot; with &quot;Test Mailing Address&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I fill &quot;input[name=website]&quot; with &quot;www.test-website.com&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I fill &quot;input[name=contactEmail]&quot; with &quot;test_email@email.com&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I fill &quot;input#telephone-input&quot; with &quot;+6590210322&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I scroll &quot;#gtm-buyer-make_offer-step3-continue-btn&quot; into view
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>Then</b> a console breakpoint is triggered with message &quot;Breakpoint reached! Press [OK] to continue...&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I scroll &quot;#gtm-buyer-make_offer-step4-make_offer-btn&quot; into view
-                                                                                                                                                                                                                                                                                                                                                </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
-                                                <b>And</b> I follow &quot;Make Offer&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
@@ -931,21 +1284,21 @@ Driver info: driver.version: unknown)</p>
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [1, 0, 0],
+                    data: [2, 0, 0],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
         new Chart(scenarioChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Passed'],
                 datasets: [{
-                    data: [1, 0],
+                    data: [2, 0],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [1, 24],
+                    data: [2, 54],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -1007,16 +1360,16 @@ Driver info: driver.version: unknown)</p>
         <div class="summary failed">
             <div class="counters">
                 <p class="features">
-                    1 features ( <strong class="failed">1 fail</strong> )
+                    2 features ( <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    1 scenarios ( <strong class="failed">1 fail</strong> )
+                    2 scenarios ( <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="steps">
-                    36 steps ( <strong class="passed">24 success</strong> <strong class="skipped">11 skipped</strong> <strong class="failed">1 fail</strong> )
+                    60 steps ( <strong class="passed">54 success</strong> <strong class="skipped">4 skipped</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="time">
-                10m7.30s - 14.98Mb
+                1m23.40s - 15.19Mb
                 </p>
             </div>
             <div class="switchers">

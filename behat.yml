@@ -19,7 +19,7 @@ default:
       selenium2: ~
       browser_name: firefox
       default_session: selenium2
-      base_url: 'http://localhost:8095'
+      base_url: 'http://dev.vuulr.info'
     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
       name: html
       renderer: Twig,Behat2
